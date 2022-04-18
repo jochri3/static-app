@@ -1,0 +1,16 @@
+language: generic
+
+services:
+  - docker
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "static-app"
+  env: "Staticapp-env"
+  bucket_name: "elasticbeanstalk-us-east-1-699701020928"
+  bucket_path: "static-app"
+  on:
+    branch: main
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
